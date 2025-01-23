@@ -3,39 +3,28 @@ package Assignment3;
 import java.util.List;
 
 public class Classroom {
-    private int classroomID; // Unique classroom ID
-    private String classroomName; // Name of the class
-    private List<Student> students; // The students in the class
-    private Teacher teacher; // The wise teacher!
+    private int classroomId;  // Уникальный ID для каждого класса
+    private List<Student> students;  // Студенты в классе
+    private Teacher teacher;  // Преподаватель в классе
 
-    public Classroom(int classroomID, String classroomName, Teacher teacher) {
-        this.classroomID = classroomID;
-        this.classroomName = classroomName;
+    public Classroom(int classroomId, List<Student> students, Teacher teacher) {
+        this.classroomId = classroomId;
+        this.students = students;
         this.teacher = teacher;
     }
 
-    // Add student
-    public void addStudent(Student student) {
-        students.add(student);
+    // Методы для доступа и манипуляции
+    public int getClassroomId() {
+        return classroomId;
     }
 
-    // Remove student
-    public void removeStudent(Student student) {
-        students.remove(student);
+    public List<Student> getStudents() {
+        return students;
     }
 
-    // Get classroom ID
-    public int getClassroomID() {
-        return classroomID;
-    }
-
-    // Set classroom ID
-    public void setClassroomID(int classroomID) {
-        this.classroomID = classroomID;
-    }
-
+    // Печать информации о классе
     @Override
     public String toString() {
-        return "Class is " + classroomID + ", Teacher is " + teacher.getName();
+        return "Classroom ID: " + classroomId + "\nTeacher: " + teacher.getName() + "\nStudents: " + students.size();
     }
 }

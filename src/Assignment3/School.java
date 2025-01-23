@@ -2,14 +2,14 @@ package Assignment3;
 import java.util.*;
 
 public class School {
-    private String name;
+    private String schoolName;
     private String address;
     private List<Student> students; // Student squad
     private List<Teacher> teachers; // Knowledge superheroes
     private List<Course> courses; // Course lists
 
-    public School(String name, String address) {
-        this.name = name;
+    public School(String schoolName, String address) {
+        this.schoolName = schoolName;
         this.address = address;
         this.students = new ArrayList<>();
         this.teachers = new ArrayList<>();
@@ -31,6 +31,11 @@ public class School {
         courses.add(course);
     }
 
+    // Get all courses
+    public List<Course> getCourses() {
+        return courses;
+    }
+
     // Remove a student
     public void removeStudent(Student student) {
         this.students.remove(student);
@@ -41,22 +46,28 @@ public class School {
         this.teachers.remove(teacher);
     }
 
-    // Print all students
+    // Printers
+    public void printSchoolInfo() {
+        System.out.println("School: " + schoolName + "\nAddress: " + address);
+    }
+
+    // Give studeeeents
     public void printStudents() {
         for (Student student : students) {
             System.out.println(student);
         }
     }
 
-    // Print all teachers
+    // Gimme teacheers
     public void printTeachers() {
         for (Teacher teacher : teachers) {
             System.out.println(teacher);
         }
     }
 
-    public void printCourses() {
-        for (Course course : courses) {}
+    public void filterOfStudents() {
+        students.sort(Comparator.comparing(Student::getGrade));
+        students.forEach(student -> System.out.println("Name: " + student.getName() + ", Grade: " + student.getAverageGrade()));
     }
 
     public void howManyPassed(){
@@ -67,10 +78,6 @@ public class School {
             }
         }
         System.out.println("Number of students who passed: " + passedCount);
-    }
-    // Filter students by grade
-    public List<Student> filterStudentsByGrade(String grade) {
-        return students.stream().filter(s -> s.getGrade().equals(grade)).toList();
     }
 
     @Override
@@ -105,7 +112,7 @@ public class School {
 
         // Format the display
         return String.format("School: %s, Address: %s\n%s\n%s\n%s",
-                name, address, studentsInfo.toString(), teachersInfo.toString(), coursesInfo.toString());
+                schoolName, address, studentsInfo.toString(), teachersInfo.toString(), coursesInfo.toString());
     }
 
 }

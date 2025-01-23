@@ -13,24 +13,10 @@ public class Teacher extends Person {
         this.experience = experience;
     }
 
-    // Name getter
-    public String getName() {
-        return super.getName();
-    }
-
     @Override
     public String toString() {
         return super.toString() + "\nSubject: " + subjects + "\nExperience: " + experience +
                 " years with $" + salary + " for a month\n";
     }
 
-    // Add subject
-    public void addSubject(String subject) {
-        subjects.add(subject);
-    }
-
-    // Remove subject
-    public void removeSubject(String subject) {
-        subjects.remove(subject);
-    }
 }

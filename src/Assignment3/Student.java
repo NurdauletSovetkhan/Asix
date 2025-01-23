@@ -24,9 +24,17 @@ public class Student extends Person {
         return grades.stream().mapToInt(i -> i).average().orElse(0.0);
     }
 
-    // Passed or not!
+    // Passed or not
+    public String isStringPassed() {
+        if(getAverageGrade() >= 60){
+            return "passed";
+        } // Passing grade
+        else{
+            return "failed";
+        }
+    }
     public boolean isPassed() {
-        return getAverageGrade() >= 60; // Passing grade
+        return getAverageGrade() >= 60;
     }
 
     @Override

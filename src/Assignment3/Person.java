@@ -16,17 +16,17 @@ public class Person {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "The name is " + name + "\nThe surname is " + surname +
+                "\nThe age is " + age + "\nThe ID is " + id;
+    }
+
     public String getName() {
         return name;
     }
 
     public String getSurname() {
         return surname;
-    }
-
-    @Override
-    public String toString() {
-        return "The name is " + name + "\nThe surname is " + surname +
-                "\nThe age is " + age + "\nThe ID is " + id;
     }
 }
