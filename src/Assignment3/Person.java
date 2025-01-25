@@ -2,7 +2,7 @@ package Assignment3;
 
 public class Person {
     // Base class
-
+    // Nevermind this row
     private String name;
     private String surname;
     private int age;
