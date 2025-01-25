@@ -33,9 +33,6 @@ public class Student extends Person {
             return "failed";
         }
     }
-    public boolean isPassed() {
-        return getAverageGrade() >= 60;
-    }
 
     @Override
     public String toString() {

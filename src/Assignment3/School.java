@@ -73,7 +73,7 @@ public class School {
     public void howManyPassed(){
         int passedCount = 0;
         for (Student student : students) {
-            if (student.isPassed()) {
+            if (student.isStringPassed() == "passed") {
                 passedCount++;
             }
         }

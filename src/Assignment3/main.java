@@ -11,21 +11,10 @@ public class main {
         /*=== 2. Register Students ===*/
         Student student1 = new Student("Nur", 12, 20, "Sovetkhan", "A", Arrays.asList(90, 99, 99), "123");
         Student student2 = new Student("Aidar", 13, 21, "Alikhan", "B", Arrays.asList(78, 80, 79), "456");
-        Student student3 = new Student("Amina", 14, 22, "Tansykbay", "C", Arrays.asList(85, 87, 88), "789");
-        Student student4 = new Student("Zhanar", 15, 19, "Nurgali", "A", Arrays.asList(92, 93, 95), "012");
-        Student student5 = new Student("Maxat", 16, 23, "Yessengali", "B", Arrays.asList(75, 72, 80), "345");
-        Student student6 = new Student("Dana", 17, 24, "Mukhamedzhanova", "A", Arrays.asList(91, 95, 92), "678");
-        Student student7 = new Student("Danila", 18, 25, "Kuznetsov", "B", Arrays.asList(83, 86, 88), "910");
-        Student student8 = new Student("Erika", 19, 26, "Bulatova", "C", Arrays.asList(80, 78, 79), "111");
 
         school.registerStudent(student1);
         school.registerStudent(student2);
-        school.registerStudent(student3);
-        school.registerStudent(student4);
-        school.registerStudent(student5);
-        school.registerStudent(student6);
-        school.registerStudent(student7);
-        school.registerStudent(student8);
+
 
         System.out.println("\nList of Students:");
         school.printStudents();
@@ -45,13 +34,13 @@ public class main {
         school.addCourse(course2);
 
         /*=== 5. Create Classrooms ===*/
-        Classroom classroom1 = new Classroom(101, Arrays.asList(student1, student2), teacher1);
-        Classroom classroom2 = new Classroom(102, Arrays.asList(student1), teacher1);
-        Classroom classroom3 = new Classroom(103, Arrays.asList(student2), teacher2);
+        Classroom classroom1 = new Classroom(101, Arrays.asList(student1, student2), teacher1, "humanitarian");
+        Classroom classroom2 = new Classroom(102, Arrays.asList(student1), teacher1, "humanitarian");
+        Classroom classroom3 = new Classroom(103, Arrays.asList(student2), teacher2, "computer");
         course1.addClassroom(classroom1);
         course1.addClassroom(classroom2);
         course2.addClassroom(classroom3);
-
+        System.out.println("\n" + classroom1.getClassroomId() + " has " + classroom1.getSubjects());
         /*=== 6. List Courses ===*/
         System.out.println("\nList of Courses:");
         for (Course course : school.getCourses()) {
