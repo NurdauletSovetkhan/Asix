@@ -7,6 +7,7 @@ public class Teacher extends Person {
     private double salary;
     private int experience; // Teacher years!
 
+    /* === Constructor === */
     public Teacher(String name, int age, String surname, List<String> subjects, int experience, int id) {
         super(name, surname, age, id);
         this.subjects = subjects;

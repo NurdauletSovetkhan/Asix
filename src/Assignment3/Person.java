@@ -29,4 +29,8 @@ public class Person {
     public String getSurname() {
         return surname;
     }
+
+    public int getID(){
+        return id;
+    }
 }
