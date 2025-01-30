@@ -101,11 +101,7 @@ public class School {
         }
     }
 
-    /* === Filter and Sort Students === */
-    public void filterOfStudents() {
-        students.sort(Comparator.comparing(Student::getGrade));
-        students.forEach(student -> System.out.println("Name: " + student.getName() + ", Grade: " + student.getAverageGrade()));
-    }
+
 
     /* === Count Passed Students === */
     public void howManyPassed() {

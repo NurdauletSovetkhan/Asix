@@ -3,21 +3,16 @@ package Assignment3;
 import java.util.List;
 
 public class Student extends Person {
-    private String grade; // Student's grade
     private List<Integer> grades; // Score list
     private String contactInfo; // Contact info!
 
-    public Student(String name, int id, int age, String surname, String grade, List<Integer> grades, String contactInfo) {
+    public Student(String name, int id, int age, String surname, List<Integer> grades, String contactInfo) {
         super(name, surname, id, age);
-        this.grade = grade;
         this.grades = grades;
         this.contactInfo = contactInfo;
     }
 
-    // Get grade
-    public String getGrade() {
-        return grade;
-    }
+
 
     // Get ID
 

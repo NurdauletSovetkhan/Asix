@@ -6,13 +6,13 @@ public class main {
     public static void main(String[] args) {
          /* === Creating students === */
         List<Integer> grades1 = Arrays.asList(85, 90, 78);
-        Student student1 = new Student("Alice", 1, 16, "Smith", "10A", grades1, "alice@mail.com");
+        Student student1 = new Student("Alice", 1, 16, "Smith", grades1, "alice@mail.com");
 
         List<Integer> grades2 = Arrays.asList(88, 92, 80);
-        Student student2 = new Student("Bob", 2, 17, "Johnson", "10B", grades2, "bob@mail.com");
+        Student student2 = new Student("Bob", 2, 17, "Johnson", grades2, "bob@mail.com");
 
         List<Integer> grades3 = Arrays.asList(70, 75, 68);
-        Student student3 = new Student("Charlie", 3, 16, "Williams", "10A", grades3, "charlie@mail.com");
+        Student student3 = new Student("Charlie", 3, 16, "Williams", grades3, "charlie@mail.com");
 
         /* === Creating teachers === */
         List<String> teacher1Subjects = Arrays.asList("Math", "Physics");
@@ -93,8 +93,6 @@ public class main {
                     System.out.print("Enter student ID: ");
                     int id = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.print("Enter student grade: ");
-                    String grade = scanner.nextLine();
                     System.out.print("Enter student contact info: ");
                     String contactInfo = scanner.nextLine();
                     List<Integer> studentGrades = new ArrayList<>();
@@ -105,7 +103,7 @@ public class main {
                         studentGrades.add(score);
                     }
                     scanner.nextLine();
-                    Student newStudent = new Student(name, id, age, surname, grade, studentGrades, contactInfo);
+                    Student newStudent = new Student(name, id, age, surname, studentGrades, contactInfo);
                     school.registerStudent(newStudent);
                     System.out.println("Student added successfully!");
                     break;
@@ -179,11 +177,14 @@ public class main {
                 case 6:
                     // Filtering students by grade
                     System.out.print("Enter grade to filter by: ");
-                    String filterGrade = scanner.nextLine();
+                    double filterGrade = scanner.nextDouble();
                     System.out.println("Students in grade " + filterGrade + ":");
                     for (Student student : school.printStudents()) {
-                        if (student.getGrade().equals(filterGrade)) {
+                        if (student.getAverageGrade()==(filterGrade)) {
                             System.out.println(student);
+                        }
+                        else {
+                            System.out.println("There's no one");
                         }
                     }
                     break;
